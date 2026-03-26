@@ -1,4 +1,9 @@
-name: Generar EPG
+permissions:
+  contents: write
+  name: Generar EPG
+
+permissions:
+  contents: write
 
 on:
   schedule:
@@ -11,10 +16,10 @@ jobs:
 
     steps:
       - name: Clonar repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Instalar Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: '3.x'
 
@@ -30,4 +35,4 @@ jobs:
           git config user.email "actions@github.com"
           git add epg.xml || echo "No file"
           git commit -m "Actualizar EPG" || echo "Sin cambios"
-          git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
+          git push
