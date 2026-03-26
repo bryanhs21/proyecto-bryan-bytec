@@ -1,6 +1,4 @@
-permissions:
-  contents: write
-  name: Generar EPG
+name: Generar EPG
 
 permissions:
   contents: write
